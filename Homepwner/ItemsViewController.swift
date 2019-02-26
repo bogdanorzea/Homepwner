@@ -38,4 +38,13 @@ class ItemsViewController: UITableViewController {
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
     }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UITextView(frame: CGRect(x:0, y:0, width: tableView.frame.size.width, height: 44))
+        footerView.text = "No more items!"
+        footerView.textAlignment = .center
+        footerView.font = UIFont.systemFont(ofSize: 17.0)
+
+        return footerView
+    }
 }
