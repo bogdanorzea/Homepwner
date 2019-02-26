@@ -47,4 +47,8 @@ class ItemsViewController: UITableViewController {
 
         return footerView
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
