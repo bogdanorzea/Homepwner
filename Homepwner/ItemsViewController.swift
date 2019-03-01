@@ -12,20 +12,27 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemStore.allItems.count
+        // Add an additional cell at the buttom of the UITableView
+        return itemStore.allItems.count + 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Create a instance of UITableViewCell, with default appereance
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
-        // Set the text on the cell with the description of the n-th item in the store
-        let item = itemStore.allItems[indexPath.row]
-        
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDolars)"
-        
-        return cell
+        if indexPath.row < itemStore.allItems.count {
+            // Create a instance of UITableViewCell, with default appereance
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            
+            // Set the text on the cell with the description of the n-th item in the store
+            let item = itemStore.allItems[indexPath.row]
+            
+            cell.textLabel?.text = item.name
+            cell.detailTextLabel?.text = "$\(item.valueInDolars)"
+            
+            return cell
+        } else {
+            // Display the additional cell at the buttom of the list
+            return tableView.dequeueReusableCell(withIdentifier: "UITableViewLastCell", for: indexPath)
+        }
+
     }
     
     override func viewDidLoad() {
@@ -37,19 +44,6 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UITextView(frame: CGRect(x:0, y:0, width: tableView.frame.size.width, height: 44))
-        footerView.text = "No more items!"
-        footerView.textAlignment = .center
-        footerView.font = UIFont.systemFont(ofSize: 17.0)
-
-        return footerView
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
@@ -95,5 +89,32 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        // Prevents deletion of last cell in the UITableView
+        if indexPath.row < itemStore.allItems.count  {
+            return UITableViewCell.EditingStyle.delete
+        } else {
+            return UITableViewCell.EditingStyle.none
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Hides the moving grip of last cell in the UITableView
+        if indexPath.row < itemStore.allItems.count  {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        // Prevents moving cells at last position in the list
+        if proposedDestinationIndexPath.row >= itemStore.allItems.count {
+            return sourceIndexPath
+        } else {
+            return proposedDestinationIndexPath
+        }
     }
 }
