@@ -79,15 +79,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No more items!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb1-oo-Wdr">
-                                            <rect key="frame" x="129" y="9.5" width="117" height="21"/>
+                                            <rect key="frame" x="129" y="8" width="117" height="23.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cb1-oo-Wdr" firstAttribute="centerY" secondItem="qAX-LX-j8f" secondAttribute="centerY" id="TFG-Sf-3CD"/>
-                                        <constraint firstItem="cb1-oo-Wdr" firstAttribute="centerX" secondItem="qAX-LX-j8f" secondAttribute="centerX" id="a2J-CY-9GW"/>
+                                        <constraint firstAttribute="bottom" secondItem="cb1-oo-Wdr" secondAttribute="bottom" constant="8" id="8nC-WW-3p2"/>
+                                        <constraint firstItem="cb1-oo-Wdr" firstAttribute="top" secondItem="qAX-LX-j8f" secondAttribute="top" constant="8" id="hJq-Ss-dO0"/>
+                                        <constraint firstItem="cb1-oo-Wdr" firstAttribute="centerX" secondItem="qAX-LX-j8f" secondAttribute="centerX" id="rw6-2p-kXq"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
