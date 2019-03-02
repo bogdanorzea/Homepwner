@@ -17,6 +17,7 @@
 		4307292A2223873500A3D227 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430729292223873500A3D227 /* Item.swift */; };
 		4307292C2223913500A3D227 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307292B2223913500A3D227 /* ItemStore.swift */; };
 		4307292E2229FACD00A3D227 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307292D2229FACD00A3D227 /* ItemCell.swift */; };
+		43D91E14222B03F000C243A1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D91E13222B03F000C243A1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		430729292223873500A3D227 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4307292B2223913500A3D227 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		4307292D2229FACD00A3D227 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		43D91E13222B03F000C243A1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				430729292223873500A3D227 /* Item.swift */,
 				4307292B2223913500A3D227 /* ItemStore.swift */,
 				4307292D2229FACD00A3D227 /* ItemCell.swift */,
+				43D91E13222B03F000C243A1 /* DetailViewController.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				43072928222385FB00A3D227 /* ItemsViewController.swift in Sources */,
 				4307292A2223873500A3D227 /* Item.swift in Sources */,
 				4307292C2223913500A3D227 /* ItemStore.swift in Sources */,
+				43D91E14222B03F000C243A1 /* DetailViewController.swift in Sources */,
 				430728FA22237E4E00A3D227 /* AppDelegate.swift in Sources */,
 				4307292E2229FACD00A3D227 /* ItemCell.swift in Sources */,
 			);
