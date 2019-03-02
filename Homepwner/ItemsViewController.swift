@@ -19,20 +19,25 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < itemStore.allItems.count {
             // Create a instance of UITableViewCell, with default appereance
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
             
             // Set the text on the cell with the description of the n-th item in the store
             let item = itemStore.allItems[indexPath.row]
             
-            cell.textLabel?.text = item.name
-            cell.detailTextLabel?.text = "$\(item.valueInDolars)"
+            cell.nameLabel.text = item.name
+            cell.serialNumberLabel.text = item.serialNumber
+            cell.valueLabel.text = "$\(item.valueInDolars)"
+            if item.valueInDolars < 50 {
+                cell.valueLabel.textColor = UIColor.green
+            } else {
+                cell.valueLabel.textColor = UIColor.red
+            }
             
             return cell
         } else {
             // Display the additional cell at the buttom of the list
             return tableView.dequeueReusableCell(withIdentifier: "UITableViewLastCell", for: indexPath)
         }
-
     }
     
     override func viewDidLoad() {
@@ -44,6 +49,9 @@ class ItemsViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
