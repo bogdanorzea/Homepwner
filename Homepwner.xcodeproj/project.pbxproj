@@ -18,6 +18,7 @@
 		4307292C2223913500A3D227 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307292B2223913500A3D227 /* ItemStore.swift */; };
 		4307292E2229FACD00A3D227 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307292D2229FACD00A3D227 /* ItemCell.swift */; };
 		435374E7222CAF1A00D54770 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435374E6222CAF1A00D54770 /* ImageStore.swift */; };
+		435374E9222E069000D54770 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435374E8222E069000D54770 /* CustomUITextField.swift */; };
 		43D91E14222B03F000C243A1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D91E13222B03F000C243A1 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		4307292B2223913500A3D227 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		4307292D2229FACD00A3D227 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		435374E6222CAF1A00D54770 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		435374E8222E069000D54770 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		43D91E13222B03F000C243A1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,17 +109,18 @@
 		430728F822237E4E00A3D227 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
-				430728F922237E4E00A3D227 /* AppDelegate.swift */,
-				430728FD22237E4E00A3D227 /* Main.storyboard */,
-				4307290022237E5000A3D227 /* Assets.xcassets */,
-				4307290222237E5000A3D227 /* LaunchScreen.storyboard */,
 				4307290522237E5000A3D227 /* Info.plist */,
+				430728F922237E4E00A3D227 /* AppDelegate.swift */,
+				4307290222237E5000A3D227 /* LaunchScreen.storyboard */,
+				430728FD22237E4E00A3D227 /* Main.storyboard */,
+				435374E8222E069000D54770 /* CustomUITextField.swift */,
+				4307290022237E5000A3D227 /* Assets.xcassets */,
 				43072927222385FB00A3D227 /* ItemsViewController.swift */,
-				430729292223873500A3D227 /* Item.swift */,
-				4307292B2223913500A3D227 /* ItemStore.swift */,
-				4307292D2229FACD00A3D227 /* ItemCell.swift */,
 				43D91E13222B03F000C243A1 /* DetailViewController.swift */,
+				430729292223873500A3D227 /* Item.swift */,
+				4307292D2229FACD00A3D227 /* ItemCell.swift */,
 				435374E6222CAF1A00D54770 /* ImageStore.swift */,
+				4307292B2223913500A3D227 /* ItemStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				4307292A2223873500A3D227 /* Item.swift in Sources */,
 				4307292C2223913500A3D227 /* ItemStore.swift in Sources */,
 				43D91E14222B03F000C243A1 /* DetailViewController.swift in Sources */,
+				435374E9222E069000D54770 /* CustomUITextField.swift in Sources */,
 				430728FA22237E4E00A3D227 /* AppDelegate.swift in Sources */,
 				435374E7222CAF1A00D54770 /* ImageStore.swift in Sources */,
 				4307292E2229FACD00A3D227 /* ItemCell.swift in Sources */,

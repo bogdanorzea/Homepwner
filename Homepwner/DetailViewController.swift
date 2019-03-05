@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var dateField: UITextField!
     @IBOutlet var imageView: UIImageView!
     
     var item: Item! {
@@ -45,7 +45,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         nameField.text = item.name
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDolars))
-        dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        dateField.text = dateFormatter.string(from: item.dateCreated)
         
         // Display the item's image from the ImageStore
         if let image = imageStore.image(fromKey: item.itemKey) {
@@ -60,6 +60,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         item.name = nameField.text ?? ""
         item.serialNumber = serialNumberField.text
+        item.dateCreated = dateFormatter.date(from: dateField.text ?? "") ?? Date()
         
         if let valueText = valueField.text, let value = numberFormatter.number(from: valueText) {
             item.valueInDolars = value.intValue
@@ -105,5 +106,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         // Take the image picker off the screen
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func dp(_ sender: UITextField) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        datePickerView.date = item.dateCreated
+        
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+    }
+    
+    @objc func handleDatePicker(sender: UIDatePicker) {
+        dateField.text = dateFormatter.string(from: sender.date)
     }
 }
