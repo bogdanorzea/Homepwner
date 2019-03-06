@@ -118,9 +118,9 @@
 				43072927222385FB00A3D227 /* ItemsViewController.swift */,
 				43D91E13222B03F000C243A1 /* DetailViewController.swift */,
 				430729292223873500A3D227 /* Item.swift */,
+				4307292B2223913500A3D227 /* ItemStore.swift */,
 				4307292D2229FACD00A3D227 /* ItemCell.swift */,
 				435374E6222CAF1A00D54770 /* ImageStore.swift */,
-				4307292B2223913500A3D227 /* ItemStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
