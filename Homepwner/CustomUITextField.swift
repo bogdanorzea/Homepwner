@@ -24,7 +24,7 @@ class CustomUITextField: UITextField {
     }
     
     override func resignFirstResponder() -> Bool {
-        super.becomeFirstResponder()
+        super.resignFirstResponder()
 
         self.layer.borderWidth = 0.5
         self.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.5).cgColor
